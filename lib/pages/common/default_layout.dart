@@ -26,10 +26,15 @@ class DefaultLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final paddedBody = Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: child,
+    );
+
     return Scaffold(
       backgroundColor: backgroundColor ?? Colors.white,
       appBar: _renderDefaultAppBar(title: title),
-      body: safeAreaDisabled ? child : SafeArea(child: child),
+      body: safeAreaDisabled ? paddedBody : SafeArea(child: paddedBody),
       bottomNavigationBar: bottomNavigationBar,
       floatingActionButton: floatingActionButton,
     );
