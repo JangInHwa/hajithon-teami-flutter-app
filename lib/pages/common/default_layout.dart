@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hajithon_teami_flutter_app/component/custom_text_style.dart';
 
 /// Default Layout은 모든 Screen에 공통적으로 래핑되는 Layout입니다.
 /// 만약 모든 페이지에 공통으로 적용되는 변화 사항이 있을 경우 `DefaultLayout`에서 수정하세요.
@@ -13,8 +14,6 @@ class DefaultLayout extends StatelessWidget {
   /// SafeArea를 사용하지 않을 경우 true로 설정하세요. 기본은 false.
   final bool safeAreaDisabled;
 
-  final AppBar? appBar;
-
   const DefaultLayout({
     super.key,
     required this.child,
@@ -23,35 +22,33 @@ class DefaultLayout extends StatelessWidget {
     this.bottomNavigationBar,
     this.floatingActionButton,
     this.safeAreaDisabled = false,
-    this.appBar,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor ?? Colors.white,
-      appBar: appBar ?? renderDefaultAppBar(),
+      appBar: _renderDefaultAppBar(title: title),
       body: safeAreaDisabled ? child : SafeArea(child: child),
       bottomNavigationBar: bottomNavigationBar,
       floatingActionButton: floatingActionButton,
     );
   }
+}
 
-  AppBar? renderDefaultAppBar() {
-    return title == null
-        ? null
-        : AppBar(
-            centerTitle: true,
-            backgroundColor: Colors.white,
-            elevation: 0,
-            title: Text(
-              title!,
-              style: const TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            foregroundColor: Colors.black,
-          );
-  }
+AppBar _renderDefaultAppBar({
+  String? title,
+}) {
+  return AppBar(
+    centerTitle: false,
+    backgroundColor: Colors.white,
+    elevation: 0,
+    title: Text(
+      title ?? '',
+      style: TextStyles.titleTextStyle.copyWith(
+        fontSize: 20.0,
+      ),
+    ),
+    foregroundColor: Colors.black,
+  );
 }

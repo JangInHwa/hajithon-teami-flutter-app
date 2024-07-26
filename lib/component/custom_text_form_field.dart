@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hajithon_teami_flutter_app/component/custom_text_style.dart';
+import 'package:hajithon_teami_flutter_app/const/color/color.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String? hintText;
@@ -19,11 +20,6 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const baseBorder = OutlineInputBorder(
-      borderSide: BorderSide(width: 1.0),
-      borderRadius: BorderRadius.all(Radius.circular(12.0)),
-    );
-
     return TextFormField(
       // cursorColor: primaryColor,
       obscureText: obscureText,
@@ -34,14 +30,8 @@ class CustomTextFormField extends StatelessWidget {
         hintText: hintText,
         errorText: errorText,
         hintStyle: TextStyles.hintTextStyle,
-        // fillColor: inputBackgroundColor,
+        fillColor: inputBackgroundColor,
         filled: true,
-        // 모든 Input 세팅의 기본 스타일 세팅
-        border: baseBorder,
-        enabledBorder: baseBorder,
-        focusedBorder: baseBorder.copyWith(
-            // borderSide: baseBorder.borderSide.copyWith(color: primaryColor),
-            ),
       ),
     );
   }
