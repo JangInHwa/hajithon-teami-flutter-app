@@ -1,6 +1,16 @@
-// ignore_for_file: constant_identifier_names
+import 'package:go_router/go_router.dart';
+import 'package:hajithon_teami_flutter_app/pages/login/login_screen.dart';
 
-abstract class Routes {
-  static const TEST = '/test';
-  static const HOME = '/';
-}
+final GoRouter router = GoRouter(
+  routes: _routes,
+  initialLocation: '/login',
+  debugLogDiagnostics: true,
+);
+
+List<GoRoute> _routes = [
+  GoRoute(
+    path: '/login',
+    name: LoginScreen.routeName,
+    builder: (_, __) => const LoginScreen(),
+  ),
+];
