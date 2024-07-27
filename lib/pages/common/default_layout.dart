@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hajithon_teami_flutter_app/component/custom_text_style.dart';
+import 'package:hajithon_teami_flutter_app/component/common/custom_text_style.dart';
 
 /// Default Layout은 모든 Screen에 공통적으로 래핑되는 Layout입니다.
 /// 만약 모든 페이지에 공통으로 적용되는 변화 사항이 있을 경우 `DefaultLayout`에서 수정하세요.
