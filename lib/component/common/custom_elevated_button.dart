@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hajithon_teami_flutter_app/component/custom_text_style.dart';
+import 'package:hajithon_teami_flutter_app/component/common/custom_text_style.dart';
 import 'package:hajithon_teami_flutter_app/const/color/color.dart';
 
 class CustomElevatedBotton extends StatelessWidget {

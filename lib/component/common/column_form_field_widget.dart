@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hajithon_teami_flutter_app/component/custom_text_form_field.dart';
-import 'package:hajithon_teami_flutter_app/component/custom_text_style.dart';
+import 'package:hajithon_teami_flutter_app/component/common/custom_text_form_field.dart';
+import 'package:hajithon_teami_flutter_app/component/common/custom_text_style.dart';
 
 class ColumnFormFieldWidget extends StatelessWidget {
   final String label;
